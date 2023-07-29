@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block metadescription %}
+    {% if branch %}
+        {{ branch.br_name}}
+    {% else %}
+        <center>ABC CART</center>
+    {% endif %}
+{% endblock %}
+{% block title %}
+        {{branch.br_name}} - ABC Bank
+
+
+{% endblock %}
+
+{% block content %}
+
+<div>
+    <br><br><br>
+    <h1 >{{branch.br_name}}</h1>
+    {{branch.District}}
+    {{branch.IFSC_code}}
+</div>
+
+
+<div>
+    <div>
+        {% for sub in sub_list %}
+        <a href="{{sub.get_url}}"> sub branches </a>
+        {{sub.br_name}}
+        <br>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

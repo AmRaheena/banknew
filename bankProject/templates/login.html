@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block metadescription %}
+Please login here
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <form method = "post" class="p-3 shadow">
+                    {% csrf_token %}
+                    <div class="form-group">
+
+                        <input type="text" class="form-control" name="username" placeholder="Enter you username"><br>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" name="password" placeholder="Enetr your password"><br>
+                    </div>
+
+                    <input type="submit" class="btn btn-success">
+                </form>
+            </div>
+        </div>
+</div>
+
+{% endblock %}
